@@ -1,0 +1,209 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.car-details {
+    padding-top: 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.car-info {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.car-info h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Enables wrapping for responsiveness */
+}
+
+.car-image {
+    flex: 1;
+    max-width: 60%;
+}
+
+.car-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.specifications {
+    flex: 1;
+    background-color: #f5f5f5;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.spec-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.spec-item:last-child {
+    margin-bottom: 0;
+}
+
+.spec-item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.spec-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.spec-info p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.additional-info {
+    margin-top: 60px;
+}
+
+.engine-specs,
+.safety-specs {
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.feature-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Engine Specifications Section: Full-width Horizontal Layout */
+.engine-specs {
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    align-items: flex-start; /* Align items at the top */
+    gap: 40px; /* Add space between image and table */
+    margin: 0 auto; /* Center content */
+    max-width: 1200px; /* Limit maximum width */
+    padding: 20px;
+}
+
+.engine-specs .feature-image {
+    flex: 1; /* Image takes up equal space */
+    max-width: 45%; /* Adjust size to fit the layout */
+    object-fit: cover;
+    border-radius: 10px; /* Optional for rounded corners */
+}
+
+.engine-specs .specs-grid {
+    flex: 1; /* Table takes up equal space */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+    background-color: #f5f5f5;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional for shadow effect */
+}
+
+/* Safety Features Section: Full-width Horizontal Layout */
+.safety-specs {
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    align-items: flex-start; /* Align items at the top */
+    gap: 40px; /* Add space between image and table */
+    margin: 0 auto; /* Center content */
+    max-width: 1200px; /* Limit maximum width */
+    padding: 20px;
+}
+
+.safety-specs .feature-image {
+    flex: 1; /* Image takes up equal space */
+    max-width: 45%; /* Adjust size to fit the layout */
+    object-fit: cover;
+    border-radius: 10px; /* Optional for rounded corners */
+}
+
+.safety-specs .specs-grid {
+    flex: 1; /* Table takes up equal space */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px;
+    background-color: #f5f5f5;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional for shadow effect */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 1024px) {
+    .engine-specs,
+    .safety-specs {
+        flex-direction: column; /* Stack image and table vertically */
+        align-items: center;
+    }
+
+    .engine-specs .feature-image,
+    .safety-specs .feature-image {
+        max-width: 100%; /* Full width for smaller screens */
+    }
+
+    .engine-specs .specs-grid,
+    .safety-specs .specs-grid {
+        grid-template-columns: 1fr; /* Stack items vertically */
+    }
+}
+
+/* Add this to cardetails.css */
+
+.engine-specs-content,
+.safety-specs-content {
+    display: flex;
+    align-items: flex-start; /* Align items at the start */
+    justify-content: space-between; /* Space between items */
+    margin-top: 20px; /* Add some space above */
+}
+
+.engine-image,
+.feature-image {
+    flex: 1; /* Allow images to take equal space */
+    max-width: 45%; /* Limit the max width of images */
+}
+
+.specs-grid {
+    flex: 1; /* Allow the specs grid to take equal space */
+    display: grid; /* Use grid layout for specifications */
+    grid-template-columns: repeat(2, 1fr); /* Two columns for specs */
+    gap: 20px; /* Space between grid items */
+}

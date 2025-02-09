@@ -1,0 +1,128 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+.custom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: transparent; /* Transparent background */
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.uoc-logo {
+    height: 80px; /* Appropriate size for the UoC logo */
+    width: auto;
+}
+
+/* Centering Navigation */
+.nav-container {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding: 0.5rem 1rem;
+    background-color: transparent; /* Dark semi-transparent background */
+    border-radius: 50px; /* Rounded container */
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-item {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #d8ff00; /* Bright yellow on hover */
+}
+
+.three-d-btn {
+    background-color: #d8ff00; /* Bright yellow button */
+    color: black;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.three-d-btn:hover {
+    background-color: #c4e600; /* Slightly darker on hover */
+}
+
+.three-d-btn .arrow {
+    margin-left: 0.5rem;
+}
+
+/* Hero section styles */
+.hero {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+    background: transparent;
+}
+
+.hero-content h1 {
+    font-size: 14rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Separate styling for CTA button */
+.cta-button {
+    display: inline-block;
+    padding: 1.5rem 2.5rem;
+    background: #4a5d45;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #3a4d35;
+}
