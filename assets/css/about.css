@@ -1,0 +1,113 @@
+/* assets/css/about.css */
+
+/* --- General About Us Page Styles --- */
+.about-us-page {
+    font-family: sans-serif; /* Or choose a specific font */
+    color: #333; /* Dark gray text color */
+    padding: 20px;
+}
+
+.about-us-page h1,
+.about-us-page h2,
+.about-us-page h3 {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #222; /* Slightly darker heading color */
+}
+
+.about-us-page p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* --- Our Story Section --- */
+.our-story {
+    display: flex; /* Use flexbox for side-by-side layout */
+    align-items: center; /* Vertically align items in the center */
+    margin-bottom: 40px; /* Spacing between sections */
+    padding: 30px;
+    background-color: #f9f9f9; /* Light gray background for the section */
+    border-radius: 8px; /* Slightly rounded corners */
+}
+
+.story-content {
+    flex: 1; /* Take up available space */
+    padding-right: 30px; /* Space between text and image */
+}
+
+.story-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #007bff; /* Example primary color - you can change this */
+}
+
+.story-image {
+    flex: 1; /* Take up available space */
+    max-width: 50%; /* Limit image width */
+}
+
+.story-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Rounded corners for the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* --- Meet the Team Section --- */
+.meet-the-team {
+    text-align: center; /* Center align heading and team grid */
+    padding: 30px;
+}
+
+.meet-the-team h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #007bff; /* Example primary color - you can change this */
+}
+
+.team-grid {
+    display: grid; /* Use grid layout for team members */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid columns */
+    gap: 30px; /* Spacing between team members */
+    justify-items: center; /* Center items horizontally in grid cells */
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column; /* Arrange image and name vertically */
+    align-items: center; /* Center items horizontally within team member div */
+}
+
+.member-image {
+    width: 150px; /* Fixed width for member images */
+    height: 150px; /* Fixed height for member images (square images) */
+    border-radius: 50%; /* Make images circular */
+    object-fit: cover; /* Ensure images fill the circle nicely */
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.team-member h3 {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #555; /* Slightly lighter color for names */
+    font-weight: normal; /* Less bold names */
+}
+
+/* --- Responsive adjustments (optional) --- */
+@media (max-width: 768px) {
+    .our-story {
+        flex-direction: column; /* Stack story content and image on smaller screens */
+        text-align: center; /* Center text on smaller screens */
+    }
+
+    .story-content {
+        padding-right: 0;
+        margin-bottom: 20px; /* Add margin below text when stacked */
+    }
+
+    .story-image {
+        max-width: 80%; /* Allow image to be wider on smaller screens */
+        margin: 0 auto; /* Center image on smaller screens */
+    }
+}
