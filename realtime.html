@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Evolutions: Fuel to Future | Real Time Data</title>
+    <title>Best Evolutions: Fuel to Future | Live Data</title>
     <link rel="icon" type="image/png" href="assets/images/icons8-eco-fuel-100.png">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/realtime.css"> <!- Link to the new CSS file -->
+    <link rel="stylesheet" href="assets/css/realtime.css"> <!-- Link to realtime.css -->
 </head>
 <body>
     <nav class="custom-header">
@@ -16,20 +16,20 @@
         </div>
         <ul class="nav-container">
             <li><a href="index.html" class="nav-item">Home</a></li>
-            <li><a href="cardetails.html" class="nav-item">Vehicle Details</a></li> <!-- Changed "Car Details" -->
+            <li><a href="cardetails.html" class="nav-item">Vehicle Details</a></li>
             <li><a href="about.html" class="nav-item">About Us</a></li>
-            <li><a href="realtime.html" class="nav-item">Live Data</a></li>     <!-- Added "Live Data" link -->
-            <li><a href="login.html" class="nav-item">Account Access</a></li> <!-- Changed "Sign In/Sign Up" -->
+            <li><a href="realtime.html" class="nav-item active">Live Data</a></li>
+            <li><a href="login.html" class="nav-item">Account Access</a></li>
         </ul>
         <a href="3dmodel.html" class="three-d-btn">3D Model <span class="arrow">→</span></a>
     </nav>
 
     <main class="realtime-page">
-        <h1 class="realtime-title">REAL TIME</h1>
+        <h1 class="realtime-title">LIVE DATA</h1>
 
         <div class="realtime-content">
             <div class="realtime-car-image">
-                <img src="assets/images/daewoo-matiz.png" alt="Daewoo Matiz" class="car-img"> <!- Placeholder car image -->
+                <img src="assets/images/daewoo-matiz.png" alt="Daewoo Matiz" class="car-img"> <!-- Placeholder car image -->
             </div>
             <div class="realtime-data-table">
                 <table>
@@ -43,38 +43,49 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Engine</td>
-                            <td>Running</td>
-                            <td>85°C</td>
-                            <td>1500 RPM</td>
-                            <td>10:30 AM</td>
-                        </tr>
-                        <tr>
-                            <td>Brakes</td>
-                            <td>Normal</td>
-                            <td>30°C</td>
-                            <td>0 km/h</td>
-                            <td>10:30 AM</td>
-                        </tr>
-                        <tr>
-                            <td>Battery</td>
-                            <td>Charging</td>
-                            <td>25°C</td>
-                            <td>N/A</td>
-                            <td>10:30 AM</td>
-                        </tr>
-                        <tr>
-                            <td>Tires</td>
-                            <td>All good</td>
-                            <td>28°C</td>
-                            <td>N/A</td>
-                            <td>10:30 AM</td>
-                        </tr>
+                        <!-- Data rows will be added here by JavaScript -->
                     </tbody>
                 </table>
             </div>
         </div>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dataTableBody = document.querySelector('.realtime-data-table tbody');
+            // Replace 'YOUR_NGROK_URL_HERE' with your actual ngrok URL for the PHP script, including the auth parameter
+            const ngrokApiUrl = 'https://123d-190-88-114-72.ngrok-free.app?auth=2sr3Yg63uYRsxG7rkBVIdf5jtG6_5PcGbX7bdBjXJisqn7yEn';
+
+            fetch(ngrokApiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data && Array.isArray(data)) {
+                        data.forEach(rowData => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${rowData.Part || 'N/A'}</td>
+                                <td>${rowData.Status || 'N/A'}</td>
+                                <td>${rowData.Temperature || 'N/A'}</td>
+                                <td>${rowData.Speed || 'N/A'}</td>
+                                <td>${rowData['Last Update'] || 'N/A'}</td> <!-- Adjust 'Last Update' if your actual column name is different -->
+                            `;
+                            dataTableBody.appendChild(row);
+                        });
+                    } else {
+                        console.error('Data received is not in the expected format:', data);
+                        dataTableBody.innerHTML = '<tr><td colspan="5">Error loading data</td></tr>'; // Display error in table
+                    }
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                    dataTableBody.innerHTML = '<tr><td colspan="5">Error loading data</td></tr>'; // Display error in table
+                });
+        });
+    </script>
 </body>
 </html>
