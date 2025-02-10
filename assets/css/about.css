@@ -2,116 +2,94 @@
 
 /* --- General About Us Page Styles --- */
 .about-us-page {
-    font-family: 'Arial', sans-serif; /* More common, clean font */
-    color: #333;
-    padding: 40px 20px; /* More padding top and bottom */
-    background-color: #fefefe; /* Very light gray, almost white background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font */
+    color: #444; /* Slightly lighter dark gray */
+    padding: 60px 20px; /* Increased top/bottom padding */
+    background-color: #f8f8f8; /* Very light, warm gray background */
+    line-height: 1.6; /* Default line height for better readability */
 }
 
-.about-us-page h1 {
-    font-size: 3.0em; /* Larger heading */
-    font-weight: bold;
-    margin-bottom: 25px;
-    color: #2c3e50; /* Darker, professional heading color */
-    text-align: left; /* Align heading to the left */
-    letter-spacing: -1px; /* Slightly reduce letter spacing for a tighter look */
+.about-us-page h1,
+.about-us-page h2,
+.about-us-page h3 {
+    font-weight: 600; /* Semi-bold headings */
+    margin-bottom: 20px;
+    color: #333; /* Darker heading color */
 }
 
 .about-us-page p {
-    font-size: 1.1em; /* Slightly larger paragraph text */
-    line-height: 1.7; /* Increased line height for better readability */
     margin-bottom: 20px;
-    color: #555; /* Slightly lighter text color */
+    color: #555; /* Slightly lighter paragraph text */
 }
 
 /* --- Our Story Section --- */
 .our-story {
-    display: flex;
-    align-items: center;
-    margin-bottom: 60px; /* More margin below the section */
-    padding: 50px; /* More padding inside the section */
+    display: grid; /* Using CSS Grid for a cleaner layout */
+    grid-template-columns: 1fr 1fr; /* Two equal columns for text and image */
+    gap: 40px; /* Gap between columns */
+    align-items: center; /* Vertically align content in grid */
+    margin-bottom: 70px; /* Increased bottom margin */
+    padding: 60px; /* Increased padding inside section */
     background-color: #ffffff; /* White background for story section */
-    border-radius: 12px; /* More rounded corners */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Softer, wider shadow */
+    border-radius: 15px; /* More pronounced rounded corners */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07); /* Softer, wider shadow */
+    margin-top: 90px; /* Adjust top margin to position below header */
 }
 
 .story-content {
-    flex: 1.5; /* Make text area slightly wider */
-    padding-right: 60px; /* More space between text and image */
+    padding-right: 0; /* No extra padding on the right for text in grid */
 }
 
 .story-content h1 {
-    font-size: 3.5em; /* Even larger "OUR STORY" heading */
-    margin-bottom: 30px;
-    color: #3498db; /* Example primary color - brighter blue */
-    letter-spacing: -2px; /* Even tighter letter spacing for main heading */
+    font-size: 3.2em; /* Slightly adjusted heading size */
+    margin-bottom: 25px;
+    color: #007bff; /* Keep a primary blue, but can be changed */
+    letter-spacing: -1.5px; /* Slightly tighter letter spacing */
+    text-align: left; /* Ensure left alignment */
 }
 
 .story-image {
-    flex: 1; /* Image takes remaining space */
-    max-width: 45%; /* Slightly reduce max image width */
+    /* Image container in grid - no flex needed */
+    max-width: 100%; /* Image takes full width of its grid cell */
 }
 
 .story-img {
     width: 100%;
     height: auto;
-    border-radius: 12px; /* More rounded corners for image */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Softer shadow for image */
-}
-
-/* ---  Header adjustments to match concept (you might need to adjust header.css as well) --- */
-.custom-header {
-    background-color: #2c3e50; /* Darker header background from concept */
-    padding: 15px 20px; /* Adjust header padding */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Add shadow to header */
-}
-
-.nav-item {
-    color: #ffffff; /* White navigation links */
-    font-weight: normal; /* Less bold nav links */
-}
-
-.nav-item:hover,
-.nav-item.active {
-    color: #ecf0f1; /* Lighter hover/active color */
-}
-
-.three-d-btn {
-    background-color: #f1c40f; /* Yellow button from concept */
-    color: #2c3e50; /* Dark text on button */
-    font-weight: bold; /* Bold button text */
-    padding: 12px 25px; /* Adjust button padding */
-}
-
-.three-d-btn:hover {
-    background-color: #f4d03f; /* Slightly lighter hover color */
+    border-radius: 15px; /* Rounded corners for image */
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.1); /* Image shadow */
+    object-fit: cover; /* Ensure image covers area nicely */
+    display: block; /* Prevent extra space below image in some cases */
 }
 
 
-/* --- Responsive adjustments (optional, refine as needed) --- */
+/* --- Responsive adjustments --- */
 @media (max-width: 768px) {
     .about-us-page {
-        padding: 30px 15px; /* Adjust page padding on smaller screens */
+        padding: 40px 15px; /* Adjust page padding for smaller screens */
     }
 
     .our-story {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px; /* Adjust section padding on smaller screens */
-        margin-bottom: 40px; /* Adjust section margin on smaller screens */
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        text-align: center; /* Center text in stacked layout */
+        padding: 40px; /* Adjust section padding for smaller screens */
+        margin-bottom: 50px; /* Adjust bottom margin for smaller screens */
+        gap: 30px; /* Reduced gap in stacked layout */
+        margin-top: 70px; /* Adjust top margin for smaller screens */
     }
 
     .story-content {
-        padding-right: 0;
-        margin-bottom: 30px; /* More margin below text when stacked */
+        padding-right: 0; /* Reset padding */
+        margin-bottom: 30px; /* Add margin below text when stacked */
     }
 
     .story-content h1 {
-        font-size: 3.0em; /* Adjust heading size on smaller screens */
+        font-size: 2.8em; /* Adjust heading size for smaller screens */
+        text-align: center; /* Center heading in stacked layout */
     }
 
     .story-image {
-        max-width: 90%; /* Allow image to be wider on smaller screens */
-        margin: 0 auto;
+        max-width: 90%; /* Image width on smaller screens */
+        margin: 0 auto; /* Center image in stacked layout */
     }
 }
