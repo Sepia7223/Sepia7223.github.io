@@ -1,0 +1,78 @@
+/* assets/css/realtime.css */
+
+.realtime-page {
+    background-color: #000; /* Black background for the page */
+    color: #fff; /* White text color */
+    padding: 40px 20px; /* Padding around page content */
+    font-family: sans-serif; /* Basic font */
+}
+
+.realtime-title {
+    font-size: 3.5em; /* Large title size */
+    text-align: center; /* Center the title */
+    margin-bottom: 40px; /* Spacing below the title */
+    letter-spacing: 2px; /* Letter spacing for the title */
+    font-weight: bold; /* Bold title text */
+    text-transform: uppercase; /* Uppercase title */
+}
+
+.realtime-content {
+    display: flex; /* Flexbox to arrange image and table side-by-side */
+    align-items: flex-start; /* Align items to the start vertically */
+    max-width: 1200px; /* Limit content width */
+    margin: 0 auto; /* Center content horizontally */
+    gap: 50px; /* Spacing between image and table */
+}
+
+.realtime-car-image {
+    flex: 1; /* Image container takes up available space */
+    max-width: 50%; /* Limit image width to half of container */
+}
+
+.realtime-car-image img {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below image */
+}
+
+.realtime-data-table {
+    flex: 1; /* Table container takes up available space */
+}
+
+.realtime-data-table table {
+    width: 100%; /* Table takes full width of its container */
+    border-collapse: collapse; /* Single border for table */
+    background-color: #fff; /* White table background */
+    color: #000; /* Black text color for table */
+    border: 2px solid #000; /* Black border for the table */
+}
+
+.realtime-data-table th,
+.realtime-data-table td {
+    border: 1px solid #000; /* Black border for table cells */
+    padding: 10px 15px; /* Padding inside table cells */
+    text-align: left; /* Left align text in cells */
+}
+
+.realtime-data-table th {
+    font-weight: bold; /* Bold text for table headers */
+    text-transform: uppercase; /* Uppercase table headers */
+    background-color: #f0f0f0; /* Light gray background for headers */
+}
+
+/* --- Responsive Adjustments (Example - you can expand on these) --- */
+@media (max-width: 768px) {
+    .realtime-content {
+        flex-direction: column; /* Stack image and table on smaller screens */
+        align-items: center; /* Center items when stacked */
+    }
+
+    .realtime-car-image {
+        max-width: 80%; /* Wider image on smaller screens */
+        margin-bottom: 30px; /* Margin below image when stacked */
+    }
+
+    .realtime-title {
+        font-size: 2.8em; /* Smaller title on smaller screens */
+    }
+}
