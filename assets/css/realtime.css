@@ -5,6 +5,7 @@
     color: #fff; /* White text color */
     padding: 40px 20px; /* Padding around page content */
     font-family: sans-serif; /* Basic font */
+    margin-top: 80px; /* Add margin-top to push content below header */
 }
 
 .realtime-title {
