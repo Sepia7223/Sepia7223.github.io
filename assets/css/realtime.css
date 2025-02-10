@@ -76,4 +76,11 @@
     .realtime-title {
         font-size: 2.8em; /* Smaller title on smaller screens */
     }
+
+    /* --- Add this new style for responsive table scrolling --- */
+    .realtime-data-table {
+        overflow-x: auto; /* Enable horizontal scroll if content overflows */
+        display: block; /* Important: Ensure table behaves as a block for scrolling */
+        max-width: 100%; /* Ensure table doesn't exceed container width */
+    }
 }
