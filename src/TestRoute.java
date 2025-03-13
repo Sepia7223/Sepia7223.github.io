@@ -17,11 +17,11 @@ public class TestRoute implements HttpHandler {
         if ("GET".equals(exchange.getRequestMethod())) {
             try {
                 // Initialize database connection
-                Database db = new Database("jdbc:mysql://localhost:3306/example_database", "root", "RootPassword#2024");
+                Database db = new Database("jdbc:mysql://localhost:3306/yourdatabase", "root", "password");
                 Connection conn = db.getConnection();
 
                 // Fetch data from the database
-                String query = "SELECT spanning, stroom, battery_state, gps_latitude, gps_longitude, speed, last_update FROM vehicle_data ORDER BY last_update DESC LIMIT 1";
+                String query = "SELECT part, status, temperature, speed, last_update FROM car_data";
                 PreparedStatement ps = conn.prepareStatement(query);
                 ResultSet rs = ps.executeQuery();
 
@@ -29,11 +29,11 @@ public class TestRoute implements HttpHandler {
                 List<CarData> data = new ArrayList<>();
                 while (rs.next()) {
                     data.add(new CarData(
-                            rs.getString("part"),
-                            rs.getString("status"),
-                            rs.getString("temperature"),
-                            rs.getString("speed"),
-                            rs.getString("last_update")
+                        rs.getString("part"),
+                        rs.getString("status"),
+                        rs.getString("temperature"),
+                        rs.getString("speed"),
+                        rs.getString("last_update")
                     ));
                 }
 
